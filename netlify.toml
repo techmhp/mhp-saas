@@ -1,0 +1,23 @@
+redirectsOrigin = "config"
+plugins = []
+headers = []
+
+[build]
+publish = "."
+command = ""
+
+[build.processing]
+
+  [build.processing.css]
+
+  [build.processing.html]
+
+  [build.processing.images]
+
+  [build.processing.js]
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+force = false
