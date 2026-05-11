@@ -24,21 +24,38 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
 
-      - name: Trigger Amplify deployment
+      - name: Trigger or wait for Amplify deployment
         run: |
-          JOB_ID=$(aws amplify start-job \
-            --app-id ${{ secrets.AMPLIFY_APP_ID }} \
-            --branch-name main \
-            --job-type RELEASE \
-            --query 'jobSummary.jobId' \
-            --output text)
-          echo "Started Amplify job: $JOB_ID"
+          APP_ID=${{ secrets.AMPLIFY_APP_ID }}
+          BRANCH=main
 
-          echo "Waiting for deployment to complete..."
+          # Check if a job is already running (auto-triggered by Amplify on push)
+          RUNNING_JOB=$(aws amplify list-jobs \
+            --app-id $APP_ID \
+            --branch-name $BRANCH \
+            --max-results 1 \
+            --query 'jobSummaries[?status==`RUNNING` || status==`PENDING`].jobId' \
+            --output text)
+
+          if [ -n "$RUNNING_JOB" ]; then
+            echo "Amplify already has a running job: $RUNNING_JOB — waiting for it to complete..."
+            JOB_ID=$RUNNING_JOB
+          else
+            echo "No running job found — starting a new Amplify deployment..."
+            JOB_ID=$(aws amplify start-job \
+              --app-id $APP_ID \
+              --branch-name $BRANCH \
+              --job-type RELEASE \
+              --query 'jobSummary.jobId' \
+              --output text)
+            echo "Started Amplify job: $JOB_ID"
+          fi
+
+          echo "Waiting for job $JOB_ID to complete..."
           while true; do
             STATUS=$(aws amplify get-job \
-              --app-id ${{ secrets.AMPLIFY_APP_ID }} \
-              --branch-name main \
+              --app-id $APP_ID \
+              --branch-name $BRANCH \
               --job-id $JOB_ID \
               --query 'job.summary.status' \
               --output text)
