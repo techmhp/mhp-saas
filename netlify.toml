@@ -1,23 +1,8 @@
-redirectsOrigin = "config"
-plugins = []
-headers = []
-
 [build]
-publish = "."
-command = ""
-
-[build.processing]
-
-  [build.processing.css]
-
-  [build.processing.html]
-
-  [build.processing.images]
-
-  [build.processing.js]
+  command   = "npm run build"
+  publish   = "dist"
 
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
-force = false
+  from   = "/*"
+  to     = "/index.html"
+  status = 200

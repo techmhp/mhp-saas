@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Nunito', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  --color-brand:          #006FFF;
+  --color-brand-light:    #EBF3FF;
+  --color-brand-dark:     #0058CC;
+  --color-coral:          #E05C45;
+  --color-coral-light:    #FFF0EE;
+  --color-mint:           #28C393;
+  --color-mint-light:     #E6F9F3;
+  --color-sunshine:       #F59E0B;
+  --color-sunshine-light: #FFF8E6;
+  --color-lavender:       #7C3AED;
+  --color-lavender-light: #F3EEFF;
+  --color-slate-dark:     #242E42;
+  --color-slate-medium:   #6B7A99;
+  --color-slate-light:    #A0AEBF;
+  --color-bg:             #F8FAFC;
+  --color-card:           #FFFFFF;
+  --color-border:         #DDE4ED;
+}
+
+@layer base {
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    color: var(--color-slate-dark);
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .font-900 { font-weight: 900; }
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-lavender) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
