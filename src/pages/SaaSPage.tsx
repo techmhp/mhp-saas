@@ -133,9 +133,9 @@ export default function SaaSPage() {
           {/* Logo + Visit */}
           <div className="flex items-center justify-between mb-10">
             <img
-              src="https://myhealthpassportcbse.netlify.app/logo.png"
+              src="/logo.png"
               alt="My Health Passport"
-              style={{ height: '72px', mixBlendMode: 'multiply' as const }}
+              style={{ height: '48px', mixBlendMode: 'multiply' as const }}
             />
             <a href={MAIN} target="_blank" rel="noopener noreferrer"
               className="text-xs font-semibold no-underline transition-colors"
@@ -203,9 +203,9 @@ export default function SaaSPage() {
                 <div className="absolute -bottom-8 -left-4 w-28 h-28 rounded-full"
                   style={{ background: 'rgba(255,255,255,0.07)' }} />
 
-                <p className="text-white/60 text-[10px] font-bold uppercase tracking-[0.22em] mb-3 relative">Annual License</p>
-                <p className="text-6xl font-900 tracking-tight leading-none relative">₹49,000</p>
-                <p className="text-white/55 text-sm mt-2 mb-5 relative">per school · per year</p>
+                <p className="text-white/60 text-[10px] font-bold uppercase tracking-[0.22em] mb-3 relative">Monthly License</p>
+                <p className="text-6xl font-900 tracking-tight leading-none relative">₹4,999</p>
+                <p className="text-white/55 text-sm mt-2 mb-5 relative">per school · per month</p>
 
                 <div className="flex gap-2 relative">
                   <div className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-bold border border-white/20"
@@ -491,7 +491,7 @@ export default function SaaSPage() {
             </a>
           </div>
           <p className="text-xs text-slate-medium mt-6">
-            ₹49,000 / year · MHP-led setup & training included · CBSE compliant
+            ₹4,999 / month · MHP-led setup & training included · CBSE compliant
           </p>
         </div>
       </section>
