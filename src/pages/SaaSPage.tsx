@@ -135,7 +135,7 @@ export default function SaaSPage() {
             <img
               src="/logo.png"
               alt="My Health Passport"
-              style={{ height: '48px', mixBlendMode: 'multiply' as const }}
+              style={{ height: '72px', mixBlendMode: 'multiply' as const }}
             />
             <a href={MAIN} target="_blank" rel="noopener noreferrer"
               className="text-xs font-semibold no-underline transition-colors"
