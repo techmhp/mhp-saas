@@ -102,7 +102,7 @@ export function LeadForm() {
     }
 
     // Mirror to Google Sheet (fire-and-forget — don't block success on this)
-    fetch("https://script.google.com/macros/s/AKfycbw99CJ31CCHtUDdOLatL3yrNa4jAPEH_a1gq0Z46ZWectPEpAk4xSn1161UyFcU8XpP/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxTCgetNAT9g5agKaefp6DCGZA8xHnO4pwuywYhmePbad4FHXXH9miApMPQEapRKyjCaA/exec", {
       method: "POST",
       body: JSON.stringify({
         school_name: values.schoolName.trim(),
