@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Lora, Inter } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 
-const heading = Lora({
+const heading = Poppins({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["600", "700", "800"],
 });
 
 const body = Inter({

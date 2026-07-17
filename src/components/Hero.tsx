@@ -3,7 +3,7 @@ import { PhoneIcon } from "./icons";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-brand-blue-tint">
+    <section id="top" className="relative overflow-hidden bg-hero-gradient">
       <div
         className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-brand-green/20 blur-3xl"
         aria-hidden

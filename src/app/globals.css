@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #14274d;
+  --background: #f4f7fc;
+  --foreground: #1a2b4a;
 
-  --brand-navy: #14274d;
-  --brand-blue: #1d54c9;
-  --brand-blue-dark: #123b91;
-  --brand-blue-tint: #eaf2fd;
-  --brand-green: #3fa66c;
-  --brand-green-tint: #e7f5ec;
-  --brand-orange: #f2994a;
-  --brand-orange-tint: #fdf1e4;
-  --brand-purple: #7c5cbf;
-  --brand-purple-tint: #f1ecfa;
+  --brand-navy: #1a2b4a;
+  --brand-blue: #1d6ef5;
+  --brand-blue-dark: #1656d6;
+  --brand-blue-tint: #e9f1fe;
+  --brand-green: #3cb878;
+  --brand-green-tint: #e6f6ec;
+  --brand-orange: #f5a623;
+  --brand-orange-tint: #fdf3e2;
+  --brand-purple: #8b7fd6;
+  --brand-purple-tint: #efebfb;
   --brand-pink: #e0518a;
   --brand-pink-tint: #fceef3;
 }
@@ -45,4 +45,15 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+/* Pale diagonal blue-white gradient used on the SaaS hero */
+.bg-hero-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #eef4fe 45%, #e4edfd 100%);
+}
+
+/* Headings use the geometric heading font with heavier weight */
+.font-serif {
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
