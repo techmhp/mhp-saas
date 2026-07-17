@@ -49,21 +49,27 @@ export function Footer() {
 
           <div className="flex items-center gap-3">
             <a
-              href="#"
+              href="https://www.linkedin.com/company/91198533/"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-blue-tint text-brand-blue transition hover:bg-brand-blue hover:text-white"
             >
               <LinkedInIcon />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/my_health_passport_/"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
               className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-blue-tint text-brand-blue transition hover:bg-brand-blue hover:text-white"
             >
               <InstagramIcon />
             </a>
             <a
-              href="#"
+              href="https://www.youtube.com/@myhealthpassport"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="YouTube"
               className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-blue-tint text-brand-blue transition hover:bg-brand-blue hover:text-white"
             >
