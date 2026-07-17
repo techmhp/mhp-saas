@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #14274d;
+
+  --brand-navy: #14274d;
+  --brand-blue: #1d54c9;
+  --brand-blue-dark: #123b91;
+  --brand-blue-tint: #eaf2fd;
+  --brand-green: #3fa66c;
+  --brand-green-tint: #e7f5ec;
+  --brand-orange: #f2994a;
+  --brand-orange-tint: #fdf1e4;
+  --brand-purple: #7c5cbf;
+  --brand-purple-tint: #f1ecfa;
+  --brand-pink: #e0518a;
+  --brand-pink-tint: #fceef3;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-navy: var(--brand-navy);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-dark: var(--brand-blue-dark);
+  --color-brand-blue-tint: var(--brand-blue-tint);
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-tint: var(--brand-green-tint);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-orange-tint: var(--brand-orange-tint);
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-purple-tint: var(--brand-purple-tint);
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-pink-tint: var(--brand-pink-tint);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-heading);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
