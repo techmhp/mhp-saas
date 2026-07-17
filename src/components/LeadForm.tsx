@@ -82,7 +82,7 @@ export function LeadForm() {
 
     setStatus("submitting");
 
-    const { error } = await supabase.from("school_leads").insert({
+    const { error } = await supabase.schema("public").from("school_leads").insert({
       school_name: values.schoolName.trim(),
       contact_name: values.contactName.trim(),
       designation: values.designation.trim() || null,
