@@ -104,6 +104,7 @@ export function LeadForm() {
     // Mirror to Google Sheet (fire-and-forget — don't block success on this)
     fetch("https://script.google.com/macros/s/AKfycbxTCgetNAT9g5agKaefp6DCGZA8xHnO4pwuywYhmePbad4FHXXH9miApMPQEapRKyjCaA/exec", {
       method: "POST",
+      mode: "no-cors",
       body: JSON.stringify({
         school_name: values.schoolName.trim(),
         contact_name: values.contactName.trim(),
