@@ -101,22 +101,20 @@ export function LeadForm() {
       return;
     }
 
-    // Mirror to Google Sheet (fire-and-forget — don't block success on this)
-    fetch("https://script.google.com/macros/s/AKfycbxTCgetNAT9g5agKaefp6DCGZA8xHnO4pwuywYhmePbad4FHXXH9miApMPQEapRKyjCaA/exec", {
-      method: "POST",
-      mode: "no-cors",
-      body: JSON.stringify({
-        school_name: values.schoolName.trim(),
-        contact_name: values.contactName.trim(),
-        designation: values.designation.trim() || "",
-        phone: values.phone.trim(),
-        email: values.email.trim().toLowerCase(),
-        city: values.city.trim() || "",
-        student_count: values.studentCount || "",
-        plan_selected: values.plan !== "Not sure yet" ? values.plan : "Not sure yet",
-        message: values.message.trim() || "",
-      }),
-    }).catch(() => {/* silent — sheet sync is best-effort */});
+    // Mirror to Google Sheet via GET (fire-and-forget — don't block success on this)
+    const sheetParams = new URLSearchParams({
+      school_name: values.schoolName.trim(),
+      contact_name: values.contactName.trim(),
+      designation: values.designation.trim() || "",
+      phone: values.phone.trim(),
+      email: values.email.trim().toLowerCase(),
+      city: values.city.trim() || "",
+      student_count: values.studentCount || "",
+      plan_selected: values.plan !== "Not sure yet" ? values.plan : "Not sure yet",
+      message: values.message.trim() || "",
+    });
+    fetch(`https://script.google.com/macros/s/AKfycbyGPMTqUZ7OliqDR5SY5Zucrz199rLeNMrwUAvPBgAq3kXYygR3xDvdloUOHhTcouY-iw/exec?${sheetParams.toString()}`)
+      .catch(() => {/* silent — sheet sync is best-effort */});
 
     setStatus("success");
   }
