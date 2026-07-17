@@ -1,11 +1,11 @@
 import Image from "next/image";
 import {
+  FacebookIcon,
   InstagramIcon,
   LinkedInIcon,
   MailIcon,
   PhoneIcon,
   PinIcon,
-  YouTubeIcon,
 } from "./icons";
 
 export function Footer() {
@@ -67,13 +67,13 @@ export function Footer() {
               <InstagramIcon />
             </a>
             <a
-              href="https://www.youtube.com/@myhealthpassport"
+              href="https://www.facebook.com/myhealthpassport"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="YouTube"
+              aria-label="Facebook"
               className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-blue-tint text-brand-blue transition hover:bg-brand-blue hover:text-white"
             >
-              <YouTubeIcon />
+              <FacebookIcon />
             </a>
           </div>
         </div>
