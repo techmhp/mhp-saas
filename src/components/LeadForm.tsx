@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { PLAN_SELECT_EVENT } from "./PlanCta";
+import { supabase } from "@/lib/supabase";
 
 const PLAN_OPTIONS = [
   "Not sure yet",
@@ -80,8 +81,26 @@ export function LeadForm() {
     if (Object.keys(nextErrors).length > 0) return;
 
     setStatus("submitting");
-    // No backend wired yet — simulated round trip so the UI can be reviewed end to end.
-    await new Promise((resolve) => setTimeout(resolve, 700));
+
+    const { error } = await supabase.from("school_leads").insert({
+      school_name: values.schoolName.trim(),
+      contact_name: values.contactName.trim(),
+      designation: values.designation.trim() || null,
+      phone: values.phone.trim(),
+      email: values.email.trim().toLowerCase(),
+      city: values.city.trim() || null,
+      student_count: values.studentCount ? parseInt(values.studentCount) : null,
+      plan_selected: values.plan !== "Not sure yet" ? values.plan : null,
+      message: values.message.trim() || null,
+    });
+
+    if (error) {
+      console.error("Lead submission error:", error.message);
+      setErrors({ schoolName: "Something went wrong. Please try again." });
+      setStatus("idle");
+      return;
+    }
+
     setStatus("success");
   }
 
