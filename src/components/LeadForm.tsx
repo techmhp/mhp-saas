@@ -101,6 +101,22 @@ export function LeadForm() {
       return;
     }
 
+    // Mirror to Google Sheet (fire-and-forget — don't block success on this)
+    fetch("https://script.google.com/macros/s/AKfycbw99CJ31CCHtUDdOLatL3yrNa4jAPEH_a1gq0Z46ZWectPEpAk4xSn1161UyFcU8XpP/exec", {
+      method: "POST",
+      body: JSON.stringify({
+        school_name: values.schoolName.trim(),
+        contact_name: values.contactName.trim(),
+        designation: values.designation.trim() || "",
+        phone: values.phone.trim(),
+        email: values.email.trim().toLowerCase(),
+        city: values.city.trim() || "",
+        student_count: values.studentCount || "",
+        plan_selected: values.plan !== "Not sure yet" ? values.plan : "Not sure yet",
+        message: values.message.trim() || "",
+      }),
+    }).catch(() => {/* silent — sheet sync is best-effort */});
+
     setStatus("success");
   }
 
