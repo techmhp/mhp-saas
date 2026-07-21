@@ -34,12 +34,20 @@ export function Nav() {
           ))}
         </nav>
 
-        <a
-          href="#demo-form"
-          className="rounded-full bg-brand-blue px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-brand-blue/30 transition hover:bg-brand-blue-dark"
-        >
-          Request a Demo
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href="/login"
+            className="rounded-full border border-brand-blue px-5 py-2.5 text-sm font-semibold text-brand-blue transition hover:bg-brand-blue hover:text-white"
+          >
+            Login
+          </a>
+          <a
+            href="#demo-form"
+            className="rounded-full bg-brand-blue px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-brand-blue/30 transition hover:bg-brand-blue-dark"
+          >
+            Request a Demo
+          </a>
+        </div>
       </div>
     </header>
   );
